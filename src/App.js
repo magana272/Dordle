@@ -78,12 +78,20 @@ function App() {
       setgame(game+1)
  
     }
-    else{
-      return;
+    else if(newBoard[curAttempt.attempt].join("").valueOf() !== word.valueOf() && curAttempt.attempt ==5){
+      alert("You lost and the word was: "+ word)
+      setCorrect(new Set())
+      setDisabled(new Set())
+      setAlmost(new Set())
+      setBoard(newBoard);
+      setCurrAttempt({attempt:0 ,letterPos:0 })
+      setWord(wordSet[Math.floor(Math.random() * wordSet.length)]);
+      setgame(game+1)
 
     }
+    else{return;
     
-  }
+  }}
 
   return (
       <div className="App">
