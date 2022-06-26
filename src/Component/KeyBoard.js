@@ -3,7 +3,7 @@ import Key from "./Key"
 import {AppContext} from "../App";
 
 function KeyBoard(){
-    const {board, curAttempt, word, correct, almost, error, onEnter, onDelete, onSelectLetter} = useContext(AppContext); 
+    const {board, curAttempt, word, almost, error, onEnter, onDelete, onSelectLetter,disabled, setDisabled,correct,setCorrect } = useContext(AppContext); 
     const top_keys = ["Q","W","E","R","T", "Y", "U", "I", "O", "P"]
     const mid_keys = ["A","S","D","F","G","H","J","K","L"]
     const low_keys = ["Enter","Z","X", "C", "V", "B", "N", "M", "Delete"]

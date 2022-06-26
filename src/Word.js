@@ -1,4 +1,5 @@
 import React from 'react'
+import Words from './word.txt'
 export const DefaultBorad = [
     [" ","","","",""],
     ["","","","",""],
@@ -27,3 +28,16 @@ export function guessing(word){
       return "Daisy. -Your Bug 🌷"}
     return "xxxxx";
   }
+export const get_randomWord = async()=>{
+    let wordSet;
+    let random_word;
+    await fetch(Words)
+    .then((response)=> response.text())
+    .then((results)=>{
+        const wordarr = results.split("\n")
+        random_word = wordarr[Math.floor(Math.random() * wordarr.length)]
+        wordSet = new Set(wordarr)
+
+    })
+    return {wordSet, random_word};
+}

@@ -67,9 +67,13 @@ nav h1 {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center
 }
-
 #correct {
   background-color: #528d4e;
+}
+#correct_b {
+  background-color: #528d4e;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='400px' width='300px'><text x = '0' y = '36' font-size='40'>🌷</text></svg>");
+
 }
 
 #almost {
