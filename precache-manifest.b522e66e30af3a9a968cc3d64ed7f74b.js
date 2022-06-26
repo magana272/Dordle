@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "56b35e93b3cb1af53e3d",
+    "revision": "b00c99d2174fbe460b80",
     "url": "/Dordle/static/css/main.9ece8982.chunk.css"
   },
   {
-    "revision": "56b35e93b3cb1af53e3d",
-    "url": "/Dordle/static/js/main.56b35e93.chunk.js"
+    "revision": "b00c99d2174fbe460b80",
+    "url": "/Dordle/static/js/main.b00c99d2.chunk.js"
   },
   {
     "revision": "7ab2393a9ad8c2b58dcd",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/Dordle/static/media/word.2706b55e.txt"
   },
   {
-    "revision": "513bcee8cb351bd1ece601bb1475203f",
+    "revision": "b62052a98b46ffcc32753a651aa42f01",
     "url": "/Dordle/index.html"
   }
 ];
