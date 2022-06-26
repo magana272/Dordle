@@ -22,7 +22,12 @@ function Letter({letterPos, attemptValue}){
     else if (attemptValue < curAttempt.attempt || (bounce && attemptValue === curAttempt.attempt)){
         if(word[letterPos]===letter){
             let new_correct= correct;
+            let new_almost = almost
             setCorrect(new_correct.add(letter))
+            if (new_almost.includes(letter)){
+                new_almost.delete(letter);
+            }
+
             if(curAttempt.attempt)
             return <div className ="letter" id= "correct_b"> {letter}</div>
         }
