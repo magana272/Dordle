@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Dordle/precache-manifest.f0dcda6bbb2b4568f1b53e464fb9a000.js"
+  "/Dordle/precache-manifest.97fcef36f071d9ab489f86d818cad973.js"
 );
 
 workbox.clientsClaim();
