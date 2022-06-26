@@ -31,13 +31,21 @@ export function guessing(word){
 export const get_randomWord = async()=>{
     let wordSet;
     let random_word;
+    let DefaultBorad;
     await fetch(Words)
     .then((response)=> response.text())
     .then((results)=>{
         const wordarr = results.split("\n")
         random_word = wordarr[Math.floor(Math.random() * wordarr.length)]
         wordSet = new Set(wordarr)
+        DefaultBorad = [
+            [" ","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""],
+            ["","","","",""]];
 
     })
-    return {wordSet, random_word};
+    return {wordSet, random_word,DefaultBorad};
 }

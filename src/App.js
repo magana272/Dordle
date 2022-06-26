@@ -20,7 +20,8 @@ function App() {
     get_randomWord().then((words)=> {
       setWordSet(words.wordSet)
       setWord(words.random_word.toUpperCase())
-      setBoard(DefaultBorad)
+      setBoard(words.DefaultBorad)
+
     }
     )
   }, [game])
@@ -35,7 +36,7 @@ function App() {
       //Deleteing any other time
       newBoard[curAttempt.attempt][curAttempt.letterPos-1] = ""
       setCurrAttempt({...curAttempt, letterPos:curAttempt.letterPos-1});
-        setBoard(newBoard);
+      setBoard(newBoard);
       }
       }
   const onEnter = (keyValue) => {
@@ -68,11 +69,14 @@ function App() {
     const newBoard = [...board]
     if(newBoard[curAttempt.attempt].join("").valueOf() === word.valueOf()){
       alert("YOU WIN!")
-      setBoard(DefaultBorad);
+      setCorrect(new Set())
+      setDisabled(new Set())
+      setAlmost(new Set())
+      setBoard(newBoard);
       setCurrAttempt({attempt:0 ,letterPos:0 })
       setWord(wordSet[Math.floor(Math.random() * wordSet.length)]);
       setgame(game+1)
-      console.log(board);
+ 
     }
     else{
       return;
