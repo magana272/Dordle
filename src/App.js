@@ -35,7 +35,8 @@ function App() {
 
     }, [bounce])
   const onDelete = (keyValue) =>{
-    // console.log(word)
+    //  This console.log is for testing:
+    console.log(word) 
     const newBoard = [...board]
     if(curAttempt.letterPos ==0 ){
       newBoard[curAttempt.attempt][curAttempt.letterPos] = ""

@@ -24,7 +24,7 @@ function Letter({letterPos, attemptValue}){
             let new_correct= correct;
             let new_almost = almost
             setCorrect(new_correct.add(letter))
-            if (new_almost.includes(letter)){
+            if (new_almost.has(letter)){
                 new_almost.delete(letter);
             }
 
