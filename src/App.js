@@ -14,19 +14,28 @@ function App() {
   const [correct, setCorrect] = useState(new Set());
   const [wordSet, setWordSet] = useState(new Set());
   const [game, setgame] = useState(0);
+  const [bounce, setBounce] = useState(0);
 
 
   useEffect(() => {
     get_randomWord().then((words)=> {
       setWordSet(words.wordSet)
       setWord(words.random_word.toUpperCase())
-      setBoard(words.DefaultBorad)
+      setBoard(words.DefaultBorad);
+      setDisabled(words.errorSet);
+      setAlmost(words.almostSet);
+      setCorrect(words.almostSet);
 
     }
     )
   }, [game])
+  useEffect(() => {
+    const newBoard = [...board]
+    setBoard(newBoard)
+
+    }, [bounce])
   const onDelete = (keyValue) =>{
-    console.log(word)
+    // console.log(word)
     const newBoard = [...board]
     if(curAttempt.letterPos ==0 ){
       newBoard[curAttempt.attempt][curAttempt.letterPos] = ""
@@ -65,21 +74,26 @@ function App() {
       setBoard(newBoard)
       return;
   }}
+  const new_game =()=>{
+    const newBoard = [...board]
+    setCorrect(new Set())
+    setDisabled(new Set())
+    setAlmost(new Set())
+    setBoard(newBoard);
+    setCurrAttempt({attempt:0 ,letterPos:0 })
+    setWord(wordSet[Math.floor(Math.random() * wordSet.length)]);
+    setgame(game+1)
+    setBounce(false);
+  }
+
   const onCheck = () =>{
     const newBoard = [...board]
     if(newBoard[curAttempt.attempt].join("").valueOf() === word.valueOf()){
-      alert("YOU WIN!")
-      setCorrect(new Set())
-      setDisabled(new Set())
-      setAlmost(new Set())
-      setBoard(newBoard);
-      setCurrAttempt({attempt:0 ,letterPos:0 })
-      setWord(wordSet[Math.floor(Math.random() * wordSet.length)]);
-      setgame(game+1)
- 
+      setBounce(true)
+
     }
     else if(newBoard[curAttempt.attempt].join("").valueOf() !== word.valueOf() && curAttempt.attempt ==5){
-      alert("You lost and the word was: "+ word)
+      alert("You lost! The word was: " + word);
       setCorrect(new Set())
       setDisabled(new Set())
       setAlmost(new Set())
@@ -97,7 +111,7 @@ function App() {
       <div className="App">
       <div className = "container-fluid"> 
           <nav><h1>Dordle</h1></nav>
-          <AppContext.Provider value ={{board, setBoard, curAttempt, setCurrAttempt, word, setWord,disabled, setDisabled,correct,setCorrect, onDelete, onEnter, onSelectLetter, onCheck, almost, setAlmost}} >
+          <AppContext.Provider value ={{board, setBoard, curAttempt, setCurrAttempt, word, setWord,disabled, setDisabled,correct,setCorrect, onDelete, onEnter, onSelectLetter, onCheck, almost, setAlmost, bounce, new_game}} >
             <div className = "col"> 
             <div className = "container-fluid"> 
               <div className ="game">

@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {AppContext} from "../App"
 function Key({keyValue, bigKey}){
 
-    const {onEnter, onDelete, onSelectLetter,disabled, setDisabled,correct,setCorrect, almost} = useContext(AppContext);
+    const {onEnter, onDelete, onSelectLetter,disabled,correct, almost} = useContext(AppContext);
     
     const selector  = () =>{
         if (keyValue.toUpperCase() == "DELETE"){

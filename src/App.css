@@ -7,7 +7,19 @@
   color: white;
 }
 
+@keyframes bounce {
+  10% {
+    transform: translateY(0);
 
+  }
+  50% {
+    transform: translateY(-30px);
+
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 nav {
   height: 60px;
@@ -73,7 +85,17 @@ nav h1 {
 #correct_b {
   background-color: #528d4e;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='400px' width='300px'><text x = '0' y = '36' font-size='40'>🌷</text></svg>");
+}
+#correct_bounce{
+  background-color: #528d4e;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='400px' width='300px'><text x = '0' y = '36' font-size='40'>🌷</text></svg>");
+  animation: bounce 1s
 
+}
+#end{
+  background-color: #528d4e;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='400px' width='300px'><text x = '0' y = '36' font-size='40'>🌷</text></svg>");
+  animation: bounce 1s
 }
 
 #almost {

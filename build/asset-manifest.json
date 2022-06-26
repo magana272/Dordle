@@ -1,7 +1,7 @@
 {
-  "main.css": "/Dordle/static/css/main.9ece8982.chunk.css",
-  "main.js": "/Dordle/static/js/main.56b35e93.chunk.js",
-  "main.js.map": "/Dordle/static/js/main.56b35e93.chunk.js.map",
+  "main.css": "/Dordle/static/css/main.8d649431.chunk.css",
+  "main.js": "/Dordle/static/js/main.7f7cb07c.chunk.js",
+  "main.js.map": "/Dordle/static/js/main.7f7cb07c.chunk.js.map",
   "static/js/1.7ab2393a.chunk.js": "/Dordle/static/js/1.7ab2393a.chunk.js",
   "static/js/1.7ab2393a.chunk.js.map": "/Dordle/static/js/1.7ab2393a.chunk.js.map",
   "static/js/2.9702aca4.chunk.js": "/Dordle/static/js/2.9702aca4.chunk.js",
@@ -9,8 +9,8 @@
   "runtime~main.js": "/Dordle/static/js/runtime~main.be461b5e.js",
   "runtime~main.js.map": "/Dordle/static/js/runtime~main.be461b5e.js.map",
   "static/media/word.txt": "/Dordle/static/media/word.2706b55e.txt",
-  "static/css/main.9ece8982.chunk.css.map": "/Dordle/static/css/main.9ece8982.chunk.css.map",
+  "static/css/main.8d649431.chunk.css.map": "/Dordle/static/css/main.8d649431.chunk.css.map",
   "index.html": "/Dordle/index.html",
-  "precache-manifest.5d2be4179033d6d8b821c5d1eed7672c.js": "/Dordle/precache-manifest.5d2be4179033d6d8b821c5d1eed7672c.js",
+  "precache-manifest.f34a96ed8858b524f1a160ec05a5ba8e.js": "/Dordle/precache-manifest.f34a96ed8858b524f1a160ec05a5ba8e.js",
   "service-worker.js": "/Dordle/service-worker.js"
 }

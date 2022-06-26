@@ -32,6 +32,9 @@ export const get_randomWord = async()=>{
     let wordSet;
     let random_word;
     let DefaultBorad;
+    let correctSet;
+    let errorSet;
+    let almostSet;
     await fetch(Words)
     .then((response)=> response.text())
     .then((results)=>{
@@ -45,7 +48,10 @@ export const get_randomWord = async()=>{
             ["","","","",""],
             ["","","","",""],
             ["","","","",""]];
+        correctSet =  new Set();
+        errorSet = new Set();
+        almostSet = new Set();
 
     })
-    return {wordSet, random_word,DefaultBorad};
+    return {wordSet, random_word,DefaultBorad, correctSet, errorSet, almostSet};
 }
