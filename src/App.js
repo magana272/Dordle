@@ -10,10 +10,11 @@ function App() {
   const [curAttempt, setCurrAttempt] = useState({attempt:0 ,letterPos :0})
   const [word, setWord] = useState("");
   const [disabled, setDisabled] = useState(new Set());
-  const [almost, setAlmost] = useState(new Set());
+  
   const [correct, setCorrect] = useState(new Set());
   const [wordSet, setWordSet] = useState(new Set());
   const [game, setgame] = useState(0);
+  const [almostSet, setAlmost] = useState(new Set());
   const [bounce, setBounce] = useState(0);
 
 
@@ -104,15 +105,30 @@ function App() {
       setgame(game+1)
 
     }
-    else{return;
-    
-  }}
+    else{
+      ///
+      let i;
+      const newBoard = [...board]
+      let guess1 = newBoard[curAttempt.attempt].join("").valueOf();
+      let check_word = word;
+      // debugger;
+      for(i=0; i <5; i++ ){
+        if(guess1[i] === check_word[i]) {
+          setCorrect(correct.add(guess1[i]));
+        }
+       else{
+        setDisabled(disabled.add(guess1[i]))
+       }
+      }
+      }
+
+    }
 
   return (
       <div className="App">
       <div className = "container-fluid"> 
-          <nav><h1>Dordle</h1></nav>
-          <AppContext.Provider value ={{board, setBoard, curAttempt, setCurrAttempt, word, setWord,disabled, setDisabled,correct,setCorrect, onDelete, onEnter, onSelectLetter, onCheck, almost, setAlmost, bounce, new_game}} >
+          <nav><h1>🌷Dordle🌷</h1></nav>
+          <AppContext.Provider value ={{board, setBoard, curAttempt, setCurrAttempt, word, setWord,disabled, setDisabled,correct,setCorrect, onDelete, onEnter, onSelectLetter, onCheck, almostSet, setAlmost, bounce, new_game}} >
             <div className = "col"> 
             <div className = "container-fluid"> 
               <div className ="game">

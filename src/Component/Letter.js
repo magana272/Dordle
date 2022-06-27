@@ -21,24 +21,12 @@ function Letter({letterPos, attemptValue}){
     }
     else if (attemptValue < curAttempt.attempt || (bounce && attemptValue === curAttempt.attempt)){
         if(word[letterPos]===letter){
-            let new_correct= correct;
-            let new_almost = almost
-            setCorrect(new_correct.add(letter))
-            if (new_almost.has(letter)){
-                new_almost.delete(letter);
-            }
-
-            if(curAttempt.attempt)
             return <div className ="letter" id= "correct_b"> {letter}</div>
         }
-        else if(word.slice(0,letterPos).includes(""+letter) || word.slice(letterPos+1, word.length).includes(""+letter) && !correct.includes(letter)){
-            let new_almost= almost;
-            setAlmost(new_almost.add(letter))
+        else if(word.includes(""+letter)){
             return <div className ="letter" id= "almost"> {letter}</div>
         }
         else{
-            let newerr = disabled;
-            setDisabled(newerr.add(letter))
             return <div className ="letter" id= "error" > {letter}</div>
         }
     }

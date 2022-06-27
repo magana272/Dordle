@@ -25,7 +25,7 @@ export function guessFunc(guess, correct_word){
 }
 export function guessing(word){
     if (word === "xxxxx"){
-      return "Daisy. -Your Bug 🌷"}
+      return "Daisy. - Your Bug 🌷"}
     return "xxxxx";
   }
 export const get_randomWord = async()=>{
